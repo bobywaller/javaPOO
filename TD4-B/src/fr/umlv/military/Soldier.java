@@ -1,6 +1,6 @@
 package fr.umlv.military;
 
-public class Soldier {
+public class Soldier implements Units {
 	public enum SoldierKind {
 		InfantryMan  (30, 3, 20), 
 		Medic        (0,  2, 10),
@@ -28,14 +28,26 @@ public class Soldier {
 		this.kind = kind;
 	}
 
+	/* (non-Javadoc)
+	 * @see fr.umlv.military.Units#speed()
+	 */
+	@Override
 	public int speed() {
 		return kind.speed;
 	}
 
+	/* (non-Javadoc)
+	 * @see fr.umlv.military.Units#health()
+	 */
+	@Override
 	public int health() {
 		return health;
 	}
 
+	/* (non-Javadoc)
+	 * @see fr.umlv.military.Units#fire()
+	 */
+	@Override
 	public int fire() {
 		return kind.fire;
 	}

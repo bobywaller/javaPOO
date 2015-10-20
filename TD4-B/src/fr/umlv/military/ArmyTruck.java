@@ -3,7 +3,7 @@ package fr.umlv.military;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArmyTruck {
+public class ArmyTruck implements Units {
 	
 	private final int speed = 10;
 	private final int fire = 20;
@@ -17,7 +17,8 @@ public class ArmyTruck {
 		}
 	}
 
-	public int getHealth() {
+	@Override
+	public int health() {
 		return health;
 	}
 
@@ -25,11 +26,13 @@ public class ArmyTruck {
 		return passengers;
 	}
 	
-	public int getSpeed() {
+	@Override
+	public int speed() {
 		return speed;
 	}
 
-	public int getFire() {
+	@Override
+	public int fire() {
 		return fire;
 	}
 	
