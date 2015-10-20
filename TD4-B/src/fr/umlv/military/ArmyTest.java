@@ -11,10 +11,10 @@ public class ArmyTest {
 	@Test
 	public void testOnFourSoldier() {
 		List<Soldier> listSoldier = new ArrayList<Soldier>();
-		listSoldier.add(new Soldier(SoldierKind.Medic));
-		listSoldier.add(new Soldier(SoldierKind.FlameThrower));
-		listSoldier.add(new Soldier(SoldierKind.InfantryMan));
-		listSoldier.add(new Soldier(SoldierKind.Aviator));
+		listSoldier.add(new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.Medic));
+		listSoldier.add(new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.FlameThrower));
+		listSoldier.add(new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.InfantryMan));
+		listSoldier.add(new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.Aviator));
 		assertEquals(10, listSoldier.stream().mapToInt(s -> s.speed()).sum());
 		assertEquals(70, listSoldier.stream().mapToInt(s -> s.health()).sum());
 		assertEquals(80, listSoldier.stream().mapToInt(s -> s.fire()).sum());
@@ -22,21 +22,21 @@ public class ArmyTest {
 	
 	@Test
 	public void testTruck() {
-		Soldier flamethrower = new Soldier(SoldierKind.FlameThrower);
-		Soldier marine = new Soldier(SoldierKind.Marine);
-		ArmyTruck truck = new ArmyTruck(marine, flamethrower);
+		Soldier flamethrower = new Soldier(Units.ArmyType.AIRFORCE,SoldierKind.FlameThrower);
+		Soldier marine = new Soldier(Units.ArmyType.AIRFORCE,SoldierKind.Marine);
+		ArmyTruck truck = new ArmyTruck(Units.ArmyType.AIRFORCE,marine, flamethrower);
 		assertEquals(40, truck.health());
 	}
 	
 	@Test
 	public void testUnits() {
 		List<Units> listSoldier = new ArrayList<Units>();
-		listSoldier.add(new Soldier(SoldierKind.Medic));
-		listSoldier.add(new Soldier(SoldierKind.InfantryMan));
+		listSoldier.add(new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.Medic));
+		listSoldier.add(new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.InfantryMan));
 		
-		Soldier flamethrower = new Soldier(SoldierKind.FlameThrower);
-		Soldier marine = new Soldier(SoldierKind.Marine);
-		ArmyTruck armyTruck = new ArmyTruck(marine, flamethrower);
+		Soldier flamethrower = new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.FlameThrower);
+		Soldier marine = new Soldier(Units.ArmyType.AIRFORCE, SoldierKind.Marine);
+		ArmyTruck armyTruck = new ArmyTruck(Units.ArmyType.AIRFORCE, marine, flamethrower);
 		
 		listSoldier.add(armyTruck);
 		

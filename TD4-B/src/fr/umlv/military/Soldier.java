@@ -22,31 +22,29 @@ public class Soldier implements Units {
 
 	private final SoldierKind kind;
 	private int health;
+	private final ArmyType type;
 
-	public Soldier(SoldierKind kind){
+	public Soldier(ArmyType type, SoldierKind kind){
 		this.health = kind.health;  // implicit null check
 		this.kind = kind;
+		this.type = type;
 	}
 
-	/* (non-Javadoc)
-	 * @see fr.umlv.military.Units#speed()
-	 */
 	@Override
 	public int speed() {
 		return kind.speed;
 	}
 
-	/* (non-Javadoc)
-	 * @see fr.umlv.military.Units#health()
-	 */
 	@Override
 	public int health() {
 		return health;
 	}
 
-	/* (non-Javadoc)
-	 * @see fr.umlv.military.Units#fire()
-	 */
+	@Override
+	public ArmyType getType() {
+		return type;
+	}
+
 	@Override
 	public int fire() {
 		return kind.fire;
