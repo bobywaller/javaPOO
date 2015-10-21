@@ -5,7 +5,8 @@ public interface Units {
 	enum ArmyType {
 		MARINES,
 		AIRFORCE,
-		NAVY;
+		NAVY,
+		MEDIC;
 	}
 	
 	public abstract ArmyType getType();

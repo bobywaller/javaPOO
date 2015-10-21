@@ -45,7 +45,6 @@ public class Soldier implements Units {
 		return type;
 	}
 
-	@Override
 	public int fire() {
 		return kind.fire;
 	}
